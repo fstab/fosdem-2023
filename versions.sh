@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export AGENT_VERSION=0.30.1
+export GRAFANA_VERSION=9.3.2
+export LOKI_VERSION=2.7.1
+export MIMIR_VERSION=2.5.0
+export TEMPO_VERSION=1.5.0
+export OPENTELEMETRY_VERSION=1.21.0

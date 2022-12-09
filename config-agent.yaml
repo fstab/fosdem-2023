@@ -1,0 +1,58 @@
+# Do not use this configuration in production.
+# It is for demonstration purposes only.
+server:
+  log_level: debug
+
+metrics:
+  global:
+    scrape_interval: 60s
+    remote_write:
+    - url: http://localhost:9009/api/v1/push
+      send_exemplars: true
+  configs:
+  - name: default
+    scrape_configs:
+    - job_name: hello-world-app
+      static_configs:
+      - targets: ['localhost:9464']
+    - job_name: greeting-service
+      static_configs:
+      - targets: ['localhost:9465']
+
+integrations:
+  agent:
+    enabled: true
+
+logs:
+  configs:
+  - name: default
+    clients:
+      - url: http://localhost:3100/api/prom/push
+    positions:
+      filename: /tmp/positions.yaml
+    scrape_configs:
+    - job_name: hello-world-app
+      static_configs:
+      - targets: [localhost]
+        labels:
+          __path__: /tmp/hello-world-app.log
+          app: hello-world-app
+    - job_name: greeting-service
+      static_configs:
+      - targets: [localhost]
+        labels:
+          __path__: /tmp/greeting-service.log
+          app: greeting-service
+
+traces:
+  configs:
+  - name: default
+    remote_write:
+      - endpoint: localhost:4317
+        insecure: true
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+            # default port 4317 is already used by Tempo on localhost
+            endpoint: "localhost:4017"

@@ -1,0 +1,12 @@
+Timeline
+
+  * Slides  4 min ( 4)
+  * Metrics 7 min (11)
+  * Logs    7 min (18)
+  * Traces  7 min (25)
+
+Content
+
+  * Metrics: raw metrics, query builder, RED, sum(rate(...))
+  * Traces: search 500 error, service graph, exemplars
+  * Logs: Filter, metrics from logs, traces -> logs, logs -> traces

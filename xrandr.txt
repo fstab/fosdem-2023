@@ -1,0 +1,5 @@
+# step 1: mirror on 2nd screen with resolution 1280x720
+xrandr --output DP-2-3 --mode 1280x720
+
+# step 2: scale built-in screen
+xrandr --output eDP-1 --mode 1920x1080 --scale-from 1280x720

@@ -1,0 +1,17 @@
+*
+!install-*.sh
+!run-*.sh
+!versions.sh
+!config-*.yaml
+!config-grafana.ini
+!grafana-datasources.yaml
+!grafana-dashboards.yaml
+!red-dashboard.json
+!common/src
+!greeting-service/src
+!hello-world-app/src
+!otel-configuration/src
+!*/pom.xml
+!pom.xml
+!mvnw
+!.mvn
