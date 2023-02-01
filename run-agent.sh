@@ -6,4 +6,4 @@ echo >> "$LOGFILE"
 echo "$(date)" >> "$LOGFILE"
 echo >> "$LOGFILE"
 
-./bin/agent-linux-amd64 --config.file=config-agent.yaml 2>&1 | tee -a "$LOGFILE"
+./bin/grafana-agent-linux-amd64 --config.file=config-agent.yaml 2>&1 | tee -a "$LOGFILE"
