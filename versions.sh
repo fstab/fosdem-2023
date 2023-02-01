@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export AGENT_VERSION=0.31.0
-export GRAFANA_VERSION=9.3.6
+export GRAFANA_VERSION=9.4.0-beta1
 export LOKI_VERSION=2.7.2
 export MIMIR_VERSION=2.5.0
 export TEMPO_VERSION=2.0.0
